@@ -23,7 +23,7 @@
 ```
 
 ## Directory Structure
-
+```
 preregistration-example
     ├── node_modules
     ├── client
@@ -103,7 +103,7 @@ preregistration-example
     ├── README.md
     ├── tsconfig.json
     ├── tslint.json
-    
+```
 
 ## Api Document (from MongoDB)
 ```
