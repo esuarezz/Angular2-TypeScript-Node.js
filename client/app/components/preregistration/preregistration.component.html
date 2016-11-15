@@ -1,0 +1,38 @@
+<div class="container">
+    <div  [hidden]="submitted">
+        <h1>Preregistration</h1>
+        <form *ngIf="active" (ngSubmit)="onSubmit()" #PreregistrationForm="ngForm">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email"
+                       required
+                       (ngModel)="user.email" name="email"
+                       #email="ngModel" >
+                <div [hidden]="email.valid"
+                     class="alert alert-danger">
+                    Email is required
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="text" class="form-control" id="phone"
+                       required
+                       (ngModel)="user.phone" name="phone"
+                       #phone="ngModel" >
+                <div [hidden]="phone.valid"
+                     class="alert alert-danger">
+                    Phone is required
+                </div>
+            </div>
+            <button type="submit" class="btn btn-default" [disabled]="!PreregistrationForm.form.valid">Submit</button>
+        </form>
+
+        <div [hidden]="!submitted">
+
+            <div >
+                <h2>An email has been sent to you with the information</h2>
+            </div>
+        </div>
+    </div>
+</div>
